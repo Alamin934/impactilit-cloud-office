@@ -151,7 +151,7 @@
         @else
 
         <div class="text-center">
-            <img alt="{{__('Empty')}}" src="/uploads/system/empty.png" class="img-fluid max-height-100" />
+            <img alt="{{__('Empty')}}" src="/setup/uploads/system/empty.png" class="img-fluid max-height-100" />
             <h4 class="mt-4">{{__('No Files Found')}}</h4>
             <p class="text-muted">
                 {{__('You have not shared any files yet.')}}

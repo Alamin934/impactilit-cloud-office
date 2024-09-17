@@ -1,4 +1,4 @@
-(function(){
+(function () {
     "use strict";
     window.addEventListener('DOMContentLoaded', () => {
         window.onscroll = function () {
@@ -57,21 +57,35 @@
 
         const not_a_landing_page = document.getElementById('not_a_landing_page');
 
-        if(!not_a_landing_page){
+        if (!not_a_landing_page) {
             pageLink.forEach((elem) => {
                 elem.addEventListener("click", (e) => {
                     e.preventDefault();
 
                     let elem_id = elem.getAttribute("href");
+
                     // Remove the domain name from the URL
                     elem_id = elem_id.replace(/^.*\/\/[^\/]+/, '');
-                    // Remove the leading slash
-                    elem_id = elem_id.replace(/^\//, '');
 
-                    document.querySelector(elem_id).scrollIntoView({
-                        behavior: "smooth",
-                        offsetTop: 1 - 60,
-                    });
+                    // Check if the URL contains a hash (indicating an ID)
+                    if (elem_id.includes('#')) {
+                        elem_id = elem_id.split('#')[1]; // Extract the ID after the '#'
+                        elem_id = '#' + elem_id; // Re-add the '#' to create a valid selector
+                    } else {
+                        // Handle cases where there's no hash
+                        elem_id = '#' + elem_id.replace(/^\//, ''); // Ensure it starts with '#'
+                    }
+
+                    const targetElement = document.querySelector(elem_id);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: "smooth",
+                            offsetTop: 1 - 60,
+                        });
+                    } else {
+                        console.error('Element not found: ' + elem_id);
+                    }
 
                 });
             });
@@ -116,8 +130,7 @@
 
         const has_signup_errors = document.getElementById('has_signup_errors');
 
-        if(has_signup_errors)
-        {
+        if (has_signup_errors) {
             has_signup_errors.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 

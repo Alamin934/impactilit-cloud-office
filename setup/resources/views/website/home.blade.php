@@ -30,10 +30,10 @@
                         @endif
                     </div>
                     <div class="absolute bottom-0 -left-9 z-[-1]">
-                        <img src="{{config('app.url')}}/setup/assets/images/website/pattern-1.svg">
+                        <img src="{{config('app.url')}}/assets/images/website/pattern-1.svg">
                     </div>
                     <div class="absolute -top-6 -right-6 z-[-1]">
-                        <img src="{{config('app.url')}}/setup/assets/images/website/pattern-2.svg">
+                        <img src="{{config('app.url')}}/assets/images/website/pattern-2.svg">
                     </div>
                 </div>
             </div>
@@ -438,7 +438,7 @@
     </div>
 
     <div class="absolute bottom-0 right-0 z-[-1]">
-        <img src="{{config('app.url')}}/setup/assets/images/website/pattern-3.svg">
+        <img src="{{config('app.url')}}/assets/images/website/pattern-3.svg">
     </div>
 </section>
 <!-- ====== Faq Section End -->
